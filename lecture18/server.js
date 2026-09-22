@@ -23,6 +23,23 @@ app.get("/:id", (req, res) => {
     }
 });
 
+app.get("/age-check/:age", (req, res) => {
+    let age = req.params.age;
+    try {
+        if (age < 18) {
+            throw new Error("You are not eligible to vote");
+        } else {
+            res.send("You are eligible to vote")
+        }
+    } catch (error) {
+        //res.status(500).json({success:false, message:"Age is less than 18"});
+        next(error); //pass the error to the error handling middleware
+    }
+})
+    +
+    app.use((err, req, res, next) => {
+        res.status(500).json({ success: false, message: err.message })
+    })
 
 
 app.use((req, res) => {   //invalid route middleware

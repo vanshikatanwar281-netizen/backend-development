@@ -5,11 +5,11 @@ const PORT = 3000
 app.use(express.json()); //it handles the json data coming from the client//encode
 
 const students = [
-    { rollNo: 1, name: "Krishn", section: "Core-B" },
-    { rollNo: 2, name: "ayan", section: "Core-B" },
-    { rollNo: 3, name: "anuj", section: "Core-B" },
-    { rollNo: 4, name: "kunal", section: "Core-B" },
-    { rollNo: 5, name: "sukhwinder", section: "Core-B" }
+    { rollNo: 1, name: "Akash", section: "Core-B" },
+    { rollNo: 2, name: "Roy", section: "Core-B" },
+    { rollNo: 3, name: "Tatwa", section: "Core-B" },
+    { rollNo: 4, name: "IIT", section: "Core-B" },
+    { rollNo: 5, name: "Kharagpur", section: "Core-B" }
 ]
 ///Read Operation
 app.get("/students", (req, res) => {
